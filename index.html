@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome Ethiopia Tours</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --brand-green: #2cae6e;
+        --brand-dark: #323232;
+        --brand-gold: #eab308; /* tailwind yellow-500 */
+      }
+      body {
+        font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto,
+          Arial, sans-serif;
+      }
+      .headline {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      /* Thin shadow and border look used across the design */
+      .cardish {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      /* Top contact bar divider dots */
+      .dot:before {
+        content: "•";
+        margin: 0 0.5rem;
+        opacity: 0.6;
+      }
+
+      /* Hero caption gradient for legibility */
+      .hero-caption {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.25)
+        );
+      }
+
+      /* Footer tiny credit line look */
+      .tint {
+        background-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.03)
+        );
+      }
+
+      /* Simple container max width close to the screenshot */
+      .wrap {
+        max-width: 1100px;
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .video-background iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none; /* Prevents clicking the video */
+      }
+
+      .hero-content {
+        z-index: 1;
+        text-align: center;
+        backdrop-filter: brightness(0.8);
+      }
+    </style>
+  </head>
+  <body class="bg-[#efefef] text-[15px] leading-relaxed text-gray-800">
+    <!-- TOP CONTACT BAR -->
+    <div class="w-full bg-[var(--brand-green)] text-white text-xs">
+      <div
+        class="wrap mx-auto px-3 sm:px-4 lg:px-0 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-1"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M2.3 6.6C3.9 11.4 8 15.1 12.8 16.7l2.3-2.3c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3v3.9c0 .7-.6 1.3-1.3 1.3C10.9 21.2 2.8 13.1 2.8 2.9 2.8 2.2 3.4 1.6 4.1 1.6H8c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2L7.3 10C5.9 9.1 4.8 7.9 4 6.6z" />
+            </svg>
+            +251 929 04 11 82</span
+          >
+          <span class="dot"></span>
+          <span>info@welcomeethiopiatours.com</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-3 opacity-90">
+          <!-- Flags mimic -->
+          <span class="inline-flex gap-1 items-center">
+            <span
+              class="w-4 h-3 bg-[url('https://flagcdn.com/w20/gb.png')] bg-cover rounded-sm"></span>
+            <span
+              class="w-4 h-3 bg-[url('https://flagcdn.com/w20/it.png')] bg-cover rounded-sm"></span>
+            <span
+              class="w-4 h-3 bg-[url('https://flagcdn.com/w20/fr.png')] bg-cover rounded-sm"></span>
+          </span>
+          <span class="dot"></span>
+          <a class="hover:underline" href="#">Our Promise</a>
+          <span class="dot"></span>
+          <a class="hover:underline" href="#">Outreach Partners</a>
+          <span class="dot"></span>
+          <a class="hover:underline" href="#">FAQs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN NAV -->
+    <header class="bg-white/95 shadow-sm">
+      <div
+        class="wrap mx-auto px-3 sm:px-4 lg:px-0 flex items-center justify-between">
+        <!-- Logo area -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded overflow-hidden border">
+            <img
+              alt="logo"
+              class="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=200&auto=format&fit=crop" />
+          </div>
+          <div>
+            <div
+              class="headline font-bold text-[14px] sm:text-[16px] leading-tight tracking-wide">
+              WELCOME<br />E T H I O P I A
+              <span class="text-[10px] align-top">TOURS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <nav class="hidden md:flex items-center gap-6 text-[14px]">
+          <a class="text-[var(--brand-green)] font-semibold" href="#">Home</a>
+          <a class="hover:text-[var(--brand-green)]" href="#about">About Us</a>
+          <div class="relative group">
+            <button class="hover:text-[var(--brand-green)]">Our Tours ▾</button>
+            <div
+              class="absolute hidden group-hover:block top-full left-0 bg-white border rounded shadow py-2 w-44">
+              <a class="block px-3 py-1.5 hover:bg-gray-100" href="#"
+                >Historic Route</a
+              >
+              <a class="block px-3 py-1.5 hover:bg-gray-100" href="#"
+                >Southern Ethiopia</a
+              >
+              <a class="block px-3 py-1.5 hover:bg-gray-100" href="#"
+                >Danakil Depression</a
+              >
+            </div>
+          </div>
+          <a class="hover:text-[var(--brand-green)]" href="#ethiopia"
+            >About Ethiopia</a
+          >
+          <a class="hover:text-[var(--brand-green)]" href="#info"
+            >Useful Information</a
+          >
+          <a class="hover:text-[var(--brand-green)]" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded bg-[var(--brand-green)] text-white">
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div id="mobileMenu" class="md:hidden hidden border-t">
+        <div class="wrap mx-auto px-4 py-3 grid gap-3 text-[15px] bg-white">
+          <a class="text-[var(--brand-green)] font-semibold" href="#">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#">Our Tours</a>
+          <a href="#ethiopia">About Ethiopia</a>
+          <a href="#info">Useful Information</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- YouTube Video Background -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+    <iframe
+      class="w-full h-full object-cover"
+  src="https://www.youtube.com/embed/ilw1UzeumnY?autoplay=1&mute=1&loop=1&playlist=ilw1UzeumnY&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0" 
+      title="Ethiopia Travel Video"
+      frameborder="0"
+      allow="autoplay; fullscreen; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- Optional dark overlay for readability -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Hero content (on top of video)
+  <div class="relative z-10 text-center text-white">
+    <h1 class="text-5xl font-bold mb-4">Welcome Ethiopia Tours</h1>
+    <p class="text-xl mb-6">Experience the Land of Origins</p>
+    <a href="#about" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold shadow-lg">
+      Explore Now
+    </a>
+  </div> -->
+</section>
+
+
+    <!-- INTRO CARDS -->
+    <section
+      class="wrap mx-auto px-3 sm:px-4 lg:px-0 -mt-8 mb-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <article class="bg-white cardish p-6">
+        <h3
+          class="headline text-[16px] font-bold text-[var(--brand-gold)] mb-2">
+          Travelling with Us
+        </h3>
+        <p>
+          Travelling to Ethiopia also means to return to the origin of
+          humankind. With much care we have designed a great choice of fantastic
+          tours through Ethiopia. These trips can be individually adjusted as
+          per your personal wishes. We particularly also offer a wide range of
+          shorter trips that may perfectly be combined with each other.
+        </p>
+      </article>
+      <!-- Card 2 -->
+      <article class="bg-white cardish p-6">
+        <h3
+          class="headline text-[16px] font-bold text-[var(--brand-gold)] mb-2">
+          Our Services
+        </h3>
+        <p>
+          We are a Premium Tour Operator offering a wide range of tailor-made
+          cultural and historic tours, photo safaris, animal- and bird watching
+          trips, desert- and mountain trekking, eco-tourism and family-friendly
+          holidays. You may be assured that your trip with us will be an
+          experience of a lifetime!
+        </p>
+      </article>
+      <!-- Card 3 -->
+      <article class="bg-white cardish p-6">
+        <h3
+          class="headline text-[16px] font-bold text-[var(--brand-gold)] mb-2">
+          Our Goal
+        </h3>
+        <p>
+          Our Ethiopia tours are designed to offer you an exciting glimpse
+          behind the curtain, experiencing history firsthand, observing the
+          splendid diversity of the natural and animal world from a front-row
+          seat, while gaining an insight into the lives of local people. Our
+          goal is not just to meet your expectations but to exceed them every
+          day that you are travelling with us.
+        </p>
+      </article>
+    </section>
+
+    <!-- THREE FEATURE IMAGES -->
+    <section
+      class="wrap mx-auto px-3 sm:px-4 lg:px-0 grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <!-- Tile -->
+      <div class="bg-white cardish">
+        <img
+          class="w-full h-56 object-cover"
+          src="https://images.unsplash.com/photo-1602459021430-54fc57c9ae63?q=80&w=1200&auto=format&fit=crop"
+          alt="Southern Ethiopia" />
+        <div class="p-3 text-center text-[13px] font-semibold text-blue-700">
+          Southern Ethiopia and Bale Mountains
+        </div>
+      </div>
+      <div class="bg-white cardish">
+        <img
+          class="w-full h-56 object-cover"
+          src="https://images.unsplash.com/photo-1602526409888-52fca1b23bfd?q=80&w=1200&auto=format&fit=crop"
+          alt="Historic Route" />
+        <div class="p-3 text-center text-[13px] font-semibold text-blue-700">
+          Northern Historic Route
+        </div>
+      </div>
+      <div class="bg-white cardish">
+        <img
+          class="w-full h-56 object-cover"
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop"
+          alt="Danakil Depression" />
+        <div class="p-3 text-center text-[13px] font-semibold text-blue-700">
+          Ethiopia with Danakil Depression and Djibouti
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER LINKS -->
+    <footer class="bg-white tint border-t">
+      <div
+        class="wrap mx-auto px-3 sm:px-4 lg:px-0 py-8 grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div>
+          <h4
+            class="headline text-[18px] text-[var(--brand-gold)] font-bold mb-3">
+            Links
+          </h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li><a class="hover:underline" href="#">Home</a></li>
+            <li><a class="hover:underline" href="#">About the Founder</a></li>
+            <li><a class="hover:underline" href="#">FAQs</a></li>
+            <li><a class="hover:underline" href="#">Our Company</a></li>
+            <li><a class="hover:underline" href="#">Our Tours</a></li>
+            <li><a class="hover:underline" href="#">What to expect</a></li>
+            <li><a class="hover:underline" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="headline text-[18px] text-[var(--brand-gold)] font-bold mb-3">
+            Attractions
+          </h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>Axum</li>
+            <li>Gonder</li>
+            <li>Harar</li>
+            <li>Lalibela</li>
+            <li>Awash National Park</li>
+            <li>Bale Mountains National Park</li>
+            <li>Simien Mountains National Park</li>
+            <li>Mago National Park</li>
+            <li>Omo</li>
+            <li>Danakil Depression</li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="headline text-[18px] text-[var(--brand-gold)] font-bold mb-3">
+            Ethiopia
+          </h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>Coffee</li>
+            <li>Culture</li>
+            <li>Facts and Figures</li>
+            <li>Festivals</li>
+            <li>Historical and Geographical Info</li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="headline text-[18px] text-[var(--brand-gold)] font-bold mb-3">
+            External Links
+          </h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>Africa Running Tours</li>
+            <li>Addis Family Getaway</li>
+            <li>Ethiopian Airlines</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t">
+        <div
+          class="wrap mx-auto px-3 sm:px-4 lg:px-0 py-5 text-[12px] text-gray-600 flex flex-col sm:flex-row items-center justify-between">
+          <div>Copyright © <span id="year"></span> Welcome Ethiopia Tours</div>
+          <div>
+            Website Design and Hosting :
+            <span class="text-gray-700">Epsilon Computer Solutions</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating "Find Us On" button mimic -->
+    <a
+      href="#"
+      class="fixed right-3 bottom-3 inline-flex items-center gap-2 bg-[var(--brand-green)] text-white rounded-full shadow-lg px-4 py-2">
+      <span class="w-2.5 h-2.5 bg-white rounded-full animate-pulse"></span>
+      <span class="text-sm">Find Us On</span>
+    </a>
+
+    <script>
+      // Set year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      btn?.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      // Autoplay video on load
+      window.addEventListener("load", () => {
+        const iframe = document.querySelector(".video-background iframe");
+        const src = iframe.getAttribute("src");
+        iframe.setAttribute("src", src + "&autoplay=1&mute=1");
+      });
+    </script>
+  </body>
+</html>
