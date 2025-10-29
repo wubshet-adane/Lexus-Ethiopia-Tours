@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <!-- MAIN NAV --> 
+    <!-- MAIN NAV -->
     <header class="bg-white/95 shadow-sm">
       <div
         class="wrap mx-auto px-3 sm:px-4 lg:px-0 flex items-center justify-between">
@@ -204,32 +204,73 @@
     </header>
 
     <!-- HERO -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
-  <!-- YouTube Video Background -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-    <iframe
-      class="w-full h-full object-cover"
-  src="https://www.youtube.com/embed/ilw1UzeumnY?autoplay=1&mute=1&loop=1&playlist=ilw1UzeumnY&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0" 
-      title="Ethiopia Travel Video"
-      frameborder="0"
-      allow="autoplay; fullscreen; encrypted-media"
-      allowfullscreen
-    ></iframe>
-  </div>
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Carousel -->
+      <div id="bg-carousel" class="absolute top-0 left-0 w-full h-full">
+        <img
+          src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca?auto=format&fit=crop&w=1600&q=80"
+          alt="Background 1"
+          class="absolute w-full h-full object-cover opacity-100 blur-sm transition-all duration-[1500ms] ease-in-out transform scale-105" />
+      </div>
 
-  <!-- Optional dark overlay for readability -->
-  <div class="absolute inset-0 bg-black/40"></div>
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- Hero content (on top of video)
-  <div class="relative z-10 text-center text-white">
-    <h1 class="text-5xl font-bold mb-4">Welcome Ethiopia Tours</h1>
-    <p class="text-xl mb-6">Experience the Land of Origins</p>
-    <a href="#about" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold shadow-lg">
-      Explore Now
-    </a>
-  </div> -->
-</section>
+      <!-- Hero Content -->
+      <div class="relative z-10 text-center text-white px-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+          Welcome to Nexus Ethiopia Tours
+        </h1>
+        <p class="text-xl md:text-2xl mb-6">
+          Discover the Beauty, Culture & Spirit of Ethiopia
+        </p>
+        <a
+          href="#about"
+          class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg transition duration-300">
+          Explore Now
+        </a>
+      </div>
+    </section>
 
+    <script>
+      const images = [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80",
+      ];
+
+      let index = 0;
+      const carousel = document.getElementById("bg-carousel");
+
+      setInterval(() => {
+        index = (index + 1) % images.length;
+
+        const nextImage = document.createElement("img");
+        nextImage.src = images[index];
+        nextImage.className =
+          "absolute w-full h-full object-cover opacity-0 blur-md transition-all duration-[1500ms] ease-in-out transform scale-110";
+
+        carousel.appendChild(nextImage);
+
+        requestAnimationFrame(() => {
+          nextImage.classList.remove("opacity-0", "blur-md", "scale-110");
+          nextImage.classList.add("opacity-100", "blur-sm", "scale-105");
+        });
+
+        setTimeout(() => {
+          const firstImage = carousel.querySelector("img:first-child");
+          if (firstImage) firstImage.remove();
+        }, 2000);
+      }, 4000); // Change every 4 seconds
+    </script>
 
     <!-- INTRO CARDS -->
     <section
